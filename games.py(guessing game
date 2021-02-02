@@ -1,0 +1,27 @@
+ #GUESS GAME  GAME :- 1
+ n = 25
+ guess=1
+ while(guess<= 9):
+
+     n1 = int(input("entre your guess \n "))
+     if n1<n:
+     
+         print("your guess is low please try again")
+         print("you have left " , 9-guess , "chances")
+         guess = guess+1
+     elif n1>n:
+         print("your guess is high please try again")
+         print("you have left ", 9 - guess, "chances")
+         guess = guess + 1
+         if guess > 9:
+             print("!!!!!!!!!GAME OVER !!!!!! YOU LOSE , you have crossed the maximum premissible limit")
+     elif n1==n:
+         print("!!!!!!!!!!!!!YOU WON CONGRATS!!!!!!!! YOU GUESSED THE CORRECT NUMBER ")
+         print("guess used:- " , guess)
+         if guess <= 5:
+             print("CONGRATS you have guessed in just less than half attempts HURRAY!!!!!")
+         else:
+             print("YOU WON BUT BE QUICK NEXT TIME")
+         break
+     else:
+         continue
