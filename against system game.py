@@ -77,11 +77,12 @@ while(chance < 10):
 else:
     pass
 
-print("computer score is :" , computer_score)
-print("human score is:" , human_score)
+print("computer score is :-" , computer_score)
+print("human score is:-" , human_score)
 
 if computer_score > human_score:
-    print("computer wins")
-
+    print("!!!!!!!!computer wins!!!!!!!!!!!!!")
+elif computer_score ==  human_score:
+    print("tie")
 else:
-    print("human wins")
+    print("!!!!!!!!!!!!!!!!!!human wins!!!!!!!!!!!!!!!!")
