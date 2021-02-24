@@ -1,0 +1,59 @@
+
+class Library:
+    def __init__(self , list , name):
+        self.booklist = list
+        self.name = name
+        self.lendDict = {}
+
+    def displaybooks(self):
+        print(f"we have the following books available in our library: {self.name} ")
+        for books in self.booklist:
+            print(books)
+    def lendbook(self , book , name):
+        if book not in self.lendDict.keys() and book in self.booklist:
+            self.lendDict.update({book:name})
+            print("book is available You can take it now ")
+        else:
+            print("The Book is not present or may be it is  already issued to someone kindly wait for its recovery")
+    def addbook(self , book):
+        self.booklist.append(book)
+        print("The book has been added successfully")
+        print("Thanks for adding book")
+    def returnbook(self , book):
+        self.lendDict.pop(book)
+
+if __name__ == '__main__':
+    manish = Library(['Python' , 'Javascript' , 'Rich dad poor dad' , 'Think and Grow rich',
+                      'BS Grewal' , 'Cengage' , 'RS Aggrawal' , 'History of spain'] , "Manish")
+
+    while(True):
+        print(f" Welcome to the {manish.name} Library !!!!!!")
+        print("1 for Display books")
+        print("2 for lend book")
+        print("3 for add book")
+        print("4 for return book")
+
+        user_choice = int(input("Entre your appropiate number"))
+        if user_choice == 1:
+            manish.displaybooks()
+        elif user_choice == 2:
+            name = input("Entre your name")
+            book = input("Entre book name")
+            manish.lendbook(book , name)
+        elif user_choice == 3:
+            book = input("entre your book name")
+            manish.addbook(book)
+        elif user_choice == 4:
+            book = input("Entre the book name")
+            manish.returnbook(book)
+
+        else:
+            print(" your choice doesn`t matched with any of the assgined options please make appropiate choice")
+
+        user_choice2 = input("press q for quit and c for continue")
+        if user_choice2 == "q":
+            exit()
+        elif user_choice2 == "c":
+            continue
+        else:
+            print("Please entre only from the given option , TRY AGAIN")
